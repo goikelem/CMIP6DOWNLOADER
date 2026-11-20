@@ -55,12 +55,6 @@ python -m pip install --upgrade cdsapi xarray netCDF4 pandas
 
 **4️⃣ Set your home directory in the script** 🏠
 
-Open `scripts/download_cmip6.py` and edit **line 20**. Replace `user` with your own username (your home directory):
-
-```python
-ROOT = Path("/home/user/DATA/cmip6")      # ❌ before
-ROOT = Path("/home/yourname/DATA/cmip6")  # ✅ after: use your own username
-```
 
 > 💡 Not sure of your home directory? Run `echo $HOME` in a terminal.
 
