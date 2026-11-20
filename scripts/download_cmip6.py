@@ -17,7 +17,7 @@ import zipfile
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path("/home/user/DATA/cmip6")
+ROOT = Path(__file__).resolve().parent.parent  # project folder (contains config/, scripts/)
 CONFIG = ROOT / "config/cmip6_config.json"
 LOG_DIR = ROOT / "logs"
 META_DIR = ROOT / "metadata"
@@ -86,7 +86,7 @@ def validate_box(parser, box):
 def download_one(client, model, experiment, resolution, var_key, area):
     var = cfg["variables"][var_key]
     start, end = cfg["experiments"][experiment]
-    folder = Path(cfg["output_dir"]) / resolution / experiment
+    folder = (ROOT / cfg["output_dir"]) / resolution / experiment
     folder.mkdir(parents=True, exist_ok=True)
     # Variable and box are part of the filename so different requests never collide.
     stem = f"{model}_{var_key}_{area_tag(area)}_{start}0101_{end}1231"

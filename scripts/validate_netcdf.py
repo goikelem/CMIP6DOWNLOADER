@@ -4,8 +4,9 @@ from pathlib import Path
 import pandas as pd
 import xarray as xr
 
-ROOT = Path("/home/user/DATA/cmip6/data")
-REPORT = Path("/home/user/DATA/cmip6/metadata/netcdf_validation_report.csv")
+PROJECT = Path(__file__).resolve().parent.parent
+ROOT = PROJECT / "data"
+REPORT = PROJECT / "metadata/netcdf_validation_report.csv"
 records = []
 
 for path in ROOT.rglob("*.nc"):
