@@ -85,6 +85,16 @@ python3 scripts/download_cmip6.py \
   --box 2 16 32 49
 ```
 
+Or Download all models and variables 
+
+```bash
+python3 scripts/download_cmip6.py \
+  --all-models \
+  --experiments ssp1_2_6 ssp2_4_5 ssp3_7_0 ssp5_8_5 \
+  --resolutions daily \
+  --all-variables \
+  --box 2 16 32 49
+```
 > 💡 Not sure what's available? Run `python3 scripts/download_cmip6.py --list-variables` or `--help`.
 
 ---
